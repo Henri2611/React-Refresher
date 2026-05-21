@@ -81,4 +81,38 @@ const sum = numbers.reduce((total, num) => total + sum , 0);
 console.log(sum);//10
 
 //Mutability Issues with Methods like Array Sort 
+// react recognizes immutability within state management
+//react detects state changes by comparing the previous and new state and triggers rerenders based on the changes
+const numbers = [4, 2, 3, 5, 1];
+const sorted = [...numbers].sort();
+console.log(sorted);
 
+//Ternary Operator
+// syntax condition ? expressionIfTrue : expressionIfFalse
+
+let age = 22;
+let message = age > 18 ? "you can vote " : " You are too young";
+console.log(message);
+
+//Short-circuiting and Logical Operators - determines whether a component should be rendered in react
+
+//  LOGICAL AND (&&) the && operator evaluates the expression on the left side first . if its true the right-hand expression is evaluated and returned . if its false the right hand expression is ignored 
+let isLoggedIn = true;
+console.log(isLoggedIn && 'Welcome back '); 
+
+//LOGICAL OR (||) - it works oppositely in that it evaluates the left- hand expression first and if its true or has any truthy value it returns that value if its false, it evaluates and returns the right hand  expressions
+let username = ' ';
+console.log(username || 'Guest');
+
+
+//Optional chaining(?.) - it allows accessing deeply nested properties of an object without worrying about encountering undefined or null errors 
+
+//Asynchronous JS :callbacks, Promises, Async/Await
+
+//Modules (import/export) - it enables you exporting and importing of values, functions or components from one file to another 
+//module.js
+export const greet = () => console.log('Hello');
+
+//anotherFile.js
+import{greet} from './module';
+greet();
