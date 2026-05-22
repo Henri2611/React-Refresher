@@ -108,6 +108,28 @@ console.log(username || 'Guest');
 //Optional chaining(?.) - it allows accessing deeply nested properties of an object without worrying about encountering undefined or null errors 
 
 //Asynchronous JS :callbacks, Promises, Async/Await
+//fetch(): Initiates a network request to a URL and immediately returns a Promise.
+// async: Added before a function definition to declare that the function will handle asynchronous operations and always return a Promise.
+// await: Pauses the execution of the async function until the Promise settles (either resolves or rejects).
+async function fetchData(){
+    try {
+        //Wait for the fetch request to complete
+        const response = await fetch("https://dummyjson.com/users");
+        
+        //Check if the HTTP request was successful
+        if(!response.ok){
+            throw new Error(`HTTP error! status:${response.status}`);
+        }
+        const data = await response.json();
+        console.log(data);
+    } catch(error) {
+        //handle any network or parsing errors 
+        console.log('Fetch error:', error)
+    }
+}
+
+fetchData();
+
 
 //Modules (import/export) - it enables you exporting and importing of values, functions or components from one file to another 
 //module.js
